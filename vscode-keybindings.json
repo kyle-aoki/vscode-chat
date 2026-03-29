@@ -1,0 +1,37 @@
+[
+  {
+    "key": "ctrl+`",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "markdown.showPreview",
+        "workbench.action.previousEditor",
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "markdown.showSource",
+        "workbench.action.keepEditor",
+        "workbench.action.previousEditor",
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+    "when": "activeWebviewPanelId == 'markdown.preview'"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "markdown.showPreview",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "markdown.showSource",
+    "when": "activeWebviewPanelId == 'markdown.preview'"
+  }
+]
