@@ -19,6 +19,12 @@ class ContextFile:
 
 
 def expand_path(path: str) -> list["ContextFile"]:
+    if path.endswith("/**"):
+        p = Path(path[:-3])
+        files = sorted(f for f in p.rglob("*") if f.is_file())
+        for f in files:
+            logger.info(f"loading context file: {f}")
+        return [ContextFile(str(f)) for f in files]
     p = Path(path)
     if p.is_dir():
         files = [f for f in sorted(p.iterdir()) if f.is_file()]
